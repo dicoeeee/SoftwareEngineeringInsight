@@ -14,6 +14,8 @@
 - [`software-development/`](./software-development/)：Commit 之前的软件开发 Agent。
 - [`software-delivery-ops/`](./software-delivery-ops/)：从 Commit/PR 开始的软件交付与生产运维 Agent。
 - [`reports/daily/`](./reports/daily/)：每日文章速览 PDF，提供核心观点和可点击原文链接。
+- [`reports/feeds/latest.json`](./reports/feeds/latest.json)：最新专题与有效信号的程序化索引。
+- [`reports/feeds/feed.xml`](./reports/feeds/feed.xml)：可订阅的 RSS 技术信号入口。
 - [`reports/weekly/`](./reports/weekly/)：跨专题周报。
 
 每个专题包含基线、日度简报和事件级信号记录。同一事件沿用稳定信号 ID；新增证据追加到原记录并保留更新历史。标记为 `excluded` 的记录仅用于保留人工更正审计，不进入后续趋势统计。

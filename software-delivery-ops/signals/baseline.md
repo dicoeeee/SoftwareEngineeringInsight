@@ -23,7 +23,7 @@ signal_count: 10
 - 可信度：高——连续官方版本材料可追溯
 - 新颖性：高——权限与审计从 Prompt 约束升级到平台机制
 - 时效属性：current
-- 事件/内容发布时间：2026-04-16 至 2026-06-18
+- 事件/内容发布时间：2026-04-16 至 2026-07-16
 - 首次发现时间：2026-07-13
 - 相关既有信号：无
 
@@ -31,23 +31,34 @@ signal_count: 10
 
 GitLab 18.11–19.1 将漏洞修复、Developer Flow、MR/流水线事件触发、工具 Allow/Ask/Deny、模型白名单和审计事件逐步整合到平台；其中个别功能仍为 Beta。
 
+`2026-07-17` 更新：GitLab 19.2 把多条 Agentic Flow 推进到 MR 与流水线控制面。Security Review Flow Public Beta 会结合 diff、原始代码、MR 讨论与相关代码进行两阶段安全审查，并按严重度选择 `Request changes` 或评论、且不自动批准；Fix CI/CD Pipeline Flow 已 GA，可读取日志、MR 变更和脚本错误，在 diff 内直接建议、在 diff 外另建 MR，信息不足或安全敏感时只评论。Dependency Auto-Remediation Beta 可从依赖扫描结果创建服务账号 MR，并在流水线失败后继续迭代；Custom Flows GA 支持事件触发、复合身份和 Human-in-the-loop 检查点。以上为官方材料可确认的能力与行为契约，不证明审查准确率或自动修复效果。
+
 ### 为什么重要
 
 分析判断：Agent 正从人工调用的单点功能转向事件驱动的 DevSecOps 控制面。
 
+`2026-07-17` 分析判断：19.2 将“发现问题—生成变更—流水线反馈—继续迭代—人工准入”进一步收敛到 MR 状态机；同时，以不自动批准、风险分级、复合身份和检查点约束 Agent，说明平台控制面正在把自主执行与合并权分离。
+
 ### 尚待确认
 
 - Beta 能力的稳定性、企业采用范围和治理成本。
+- Security Review 的误报/漏报、Dependency Auto-Remediation 的成功率，以及服务账号 MR 的权限与回滚边界。
+- Fix Pipeline 当前只读取最后 150 KiB 日志，沙箱有时不能验证依赖安装，且不保证遵循 `AGENTS.md`；这些限制在真实仓库中的影响仍待评估。
 
 ### 支持来源
 
 - P1 · [GitLab 18.11](https://about.gitlab.com/whats-new/18-11/) · GitLab · 官方版本说明 · `2026-04-16`
 - P1 · [GitLab 19.0](https://about.gitlab.com/whats-new/19-0/) · GitLab · 官方版本说明 · `2026-05`
 - P1 · [GitLab 19.1](https://about.gitlab.com/whats-new/19-1/) · GitLab · 官方版本说明 · `2026-06-18`
+- P1 · [GitLab Duo Security Review Flow](https://about.gitlab.com/blog/gitlab-duo-security-review-flow/) · GitLab · 官方产品博客 · `2026-07-16`
+- P1 · [Fix CI/CD Pipeline Flow](https://docs.gitlab.com/user/duo_agent_platform/flows/foundational_flows/fix_pipeline/) · GitLab · 官方文档 · `2026-07-17`（本轮核验）
+- P1 · [Dependency scanning auto-remediation](https://about.gitlab.com/blog/dependency-scanning-auto-remediation/) · GitLab · 官方产品博客 · `2026-07-16`
+- P1 · [Multi-step software delivery with agentic flows](https://about.gitlab.com/blog/multi-step-software-delivery-with-agentic-flows/) · GitLab · 官方产品博客 · `2026-07-16`
 
 ### 更新历史
 
 - `2026-07-13`：基线首次记录。
+- `2026-07-17`：追加 GitLab 19.2 的 Security Review、Fix Pipeline、Dependency Auto-Remediation 与 Custom Flows；区分 GA/Public Beta 和产品行为事实与效果证据，主证据状态维持“已证实事实”。
 
 ## `sdo-20260422-gemini-cloud-assist-ops` — Gemini Cloud Assist 承担持续云运维与 FinOps
 

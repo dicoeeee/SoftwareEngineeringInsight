@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-07-17T11:28:33+08:00",
+  "repository": "https://github.com/dicoeeee/SoftwareEngineeringInsight",
+  "topics": [
+    {
+      "topic": "software-development",
+      "label": "软件开发 Agent",
+      "latest_brief": {
+        "date": "2026-07-17",
+        "status": "partial",
+        "url": "https://github.com/dicoeeee/SoftwareEngineeringInsight/blob/main/software-development/briefs/2026/07/2026-07-17.md"
+      },
+      "signals": [
+        {
+          "id": "sd-20260716-codex-dangerous-rm-guard",
+          "title": "Codex 在 Full Access 中保留危险删除命令防线",
+          "evidence_status": "已证实事实",
+          "attention_momentum": "新增",
+          "timeliness": "current",
+          "summary": "OpenAI 在 Codex CLI 0.144.5 中扩展危险命令检测：即使处于 danger-full-access，包含强制删除选项的 rm 也会被识别；当允许询问时进入审批，当 AskForApproval::Never 时直接拒绝。对应已合并 PR 将检测从简单命令扩展到 Shell 控制流、命令替换、sudo、env、trap 等字面可解析形式，并向模型返回更具体的拒绝原因。Simon Willison 同日引述 OpenAI 工程师称，团队调查了少量 GPT-5.6 意外删除文件报告，常见配置组合是 Full Access、缺少 Sandbox/Auto Review、模型把 $HOME 覆盖为临时目录后误删；该部分…",
+          "record_url": "https://github.com/dicoeeee/SoftwareEngineeringInsight/blob/main/software-development/signals/2026/07/2026-07-17.md",
+          "source_title": "Release 0.144.5 · openai/codex",
+          "source_url": "https://github.com/openai/codex/releases/tag/rust-v0.144.5"
+        },
+        {
+          "id": "sd-20260716-conductor-portable-sdd-plugin",
+          "title": "Conductor 将 Spec-driven Development 封装为跨 Harness 插件",
+          "evidence_status": "早期信号",
+          "attention_momentum": "新增",
+          "timeliness": "current",
+          "summary": "Google 宣布 Conductor 从 Gemini CLI Extension 迁移为 Plugin Package。该包可同时包含 Skills、Rules、MCP Servers 与 Hooks，并声称兼容 Antigravity CLI、Claude 等工具；工作流继续把 spec.md、plan.md 和任务状态保存在仓库的可版本控制 Markdown 中，同时由对话驱动生成、更新 Context、Spec、Plan 和完成状态。兼容范围可由官方发布确认，跨 Harness 的行为一致性与效果仍属于早期信号。",
+          "record_url": "https://github.com/dicoeeee/SoftwareEngineeringInsight/blob/main/software-development/signals/2026/07/2026-07-17.md",
+          "source_title": "Evolving Spec-Driven Development: Conductor Now Supports Antigravity",
+          "source_url": "https://developers.googleblog.com/evolving-spec-driven-development-conductor-now-supports-antigravity/"
+        },
+        {
+          "id": "sd-20260716-qwen-auto-approval-default",
+          "title": "Qwen Code 默认授权从逐次询问改为 Auto",
+          "evidence_status": "已证实事实",
+          "attention_momentum": "新增",
+          "timeliness": "current",
+          "summary": "Qwen Code v0.19.11 将未显式配置时的默认 Approval Mode 从 default（未在 Allowlist 的 Tool Call 逐次询问）改为 auto。官方 PR 说明 Auto 使用三层决策：Workspace Edit 自动批准、只读 Tool 按 Allowlist 批准、其余操作交给 LLM Classifier；Untrusted Folder 仍强制回到 Ask Permissions，用户也可显式切回手动模式。PR 同时明确承认 Classifier 可能把风险操作误判为安全，且交互验证仅覆盖 macOS。",
+          "record_url": "https://github.com/dicoeeee/SoftwareEngineeringInsight/blob/main/software-development/signals/2026/07/2026-07-17.md",
+          "source_title": "Qwen Code v0.19.11",
+          "source_url": "https://github.com/QwenLM/qwen-code/releases/tag/v0.19.11"
+        }
+      ]
+    },
+    {
+      "topic": "software-delivery-ops",
+      "label": "软件交付与运维 Agent",
+      "latest_brief": {
+        "date": "2026-07-17",
+        "status": "partial",
+        "url": "https://github.com/dicoeeee/SoftwareEngineeringInsight/blob/main/software-delivery-ops/briefs/2026/07/2026-07-17.md"
+      },
+      "signals": [
+        {
+          "id": "sdo-20260528-google-sre-actuation-control-plane",
+          "title": "Google SRE 将 Agent 推理与高风险执行拆成渐进授权控制面",
+          "evidence_status": "厂商主张",
+          "attention_momentum": "新增",
+          "timeliness": "historical",
+          "summary": "Google SRE 公开 AI Operator 与 Actuation Agent/Actus 的分层架构：推理 Agent 负责调查和选择缓解方案，但不能直接运行脚本；Actuation 层以确定性接口执行，并要求 dry-run、事故理由、并发动作检查和风险评分。原本可自主执行的 L3 动作在高风险或异常生产环境中可动态降为 L2 人工批准；长任务需要结果验证，Guardian/Red Button 可暂停进行中动作、阻止新动作并撤销全部 L3 权限。Agent 使用独立身份、按需最小权限、专用速率限制和 circuit breaker，不继承操作者的 ambient access。 同一材料还描述 IRM Analyze…",
+          "record_url": "https://github.com/dicoeeee/SoftwareEngineeringInsight/blob/main/software-delivery-ops/signals/2026/07/2026-07-17.md",
+          "source_title": "AI in SRE: How Google is Engineering the Future of Reliable Operations",
+          "source_url": "https://sre.google/resources/practices-and-processes/ai-engineering-reliable-operations/"
+        },
+        {
+          "id": "sdo-20260714-grafana-cross-source-assistant",
+          "title": "Grafana Assistant 将跨 30+ 数据源调查纳入统一权限边界",
+          "evidence_status": "早期信号",
+          "attention_momentum": "新增",
+          "timeliness": "current",
+          "summary": "Grafana 宣布 Assistant 可通过原生 data source architecture 跨 30 多种数据源工作，覆盖 AppDynamics、Azure Monitor、Dynatrace、Honeycomb、New Relic、Splunk、Zabbix、MongoDB、Oracle、Snowflake、Jira 等；用户可在一次调查中查询、读取和关联数据，并据此创建 dashboard。官方文档说明 Assistant 的动作继续通过既有 security、auditing、RBAC 和数据源权限执行。Assistant Investigations 以 Public Preview 提供 multi-age…",
+          "record_url": "https://github.com/dicoeeee/SoftwareEngineeringInsight/blob/main/software-delivery-ops/signals/2026/07/2026-07-17.md",
+          "source_title": "Stop switching tools to find answers: Grafana Assistant now works across 30+ data sources",
+          "source_url": "https://grafana.com/blog/stop-switching-tools-to-find-answers-grafana-assistant-now-works-across-30-data-sources/"
+        }
+      ]
+    }
+  ],
+  "latest_daily_pdf": {
+    "date": "2026-07-16",
+    "url": "https://github.com/dicoeeee/SoftwareEngineeringInsight/blob/main/reports/daily/2026/07/2026-07-16.pdf"
+  },
+  "latest_weekly_report": null
+}
