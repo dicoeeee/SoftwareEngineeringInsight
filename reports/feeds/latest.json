@@ -1,49 +1,49 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-07-17T11:28:33+08:00",
+  "generated_at": "2026-07-18T12:03:47+08:00",
   "repository": "https://github.com/dicoeeee/SoftwareEngineeringInsight",
   "topics": [
     {
       "topic": "software-development",
       "label": "软件开发 Agent",
       "latest_brief": {
-        "date": "2026-07-17",
+        "date": "2026-07-18",
         "status": "partial",
-        "url": "https://github.com/dicoeeee/SoftwareEngineeringInsight/blob/main/software-development/briefs/2026/07/2026-07-17.md"
+        "url": "https://github.com/dicoeeee/SoftwareEngineeringInsight/blob/main/software-development/briefs/2026/07/2026-07-18.md"
       },
       "signals": [
         {
-          "id": "sd-20260716-codex-dangerous-rm-guard",
-          "title": "Codex 在 Full Access 中保留危险删除命令防线",
+          "id": "sd-20260714-copilot-mcp-trust-baseline",
+          "title": "Copilot 以 MCP 配置与资产指纹变化触发重新审批",
           "evidence_status": "已证实事实",
           "attention_momentum": "新增",
           "timeliness": "current",
-          "summary": "OpenAI 在 Codex CLI 0.144.5 中扩展危险命令检测：即使处于 danger-full-access，包含强制删除选项的 rm 也会被识别；当允许询问时进入审批，当 AskForApproval::Never 时直接拒绝。对应已合并 PR 将检测从简单命令扩展到 Shell 控制流、命令替换、sudo、env、trap 等字面可解析形式，并向模型返回更具体的拒绝原因。Simon Willison 同日引述 OpenAI 工程师称，团队调查了少量 GPT-5.6 意外删除文件报告，常见配置组合是 Full Access、缺少 Sandbox/Auto Review、模型把 $HOME 覆盖为临时目录后误删；该部分…",
-          "record_url": "https://github.com/dicoeeee/SoftwareEngineeringInsight/blob/main/software-development/signals/2026/07/2026-07-17.md",
-          "source_title": "Release 0.144.5 · openai/codex",
-          "source_url": "https://github.com/openai/codex/releases/tag/rust-v0.144.5"
+          "summary": "GitHub 在 Visual Studio 的 2026 年 6 月更新中加入 MCP Server 信任基线：IDE 启动时比较 MCP Server configuration 与 asset fingerprint；一旦相对已信任基线发生变化，默认要求用户 Review/Approve 后才运行。该产品行为可由官方 Changelog 确认，但它能否覆盖所有配置来源、间接资产和运行期变化仍未公开验证。",
+          "record_url": "https://github.com/dicoeeee/SoftwareEngineeringInsight/blob/main/software-development/signals/2026/07/2026-07-18.md",
+          "source_title": "GitHub Copilot in Visual Studio — June update",
+          "source_url": "https://github.blog/changelog/2026-07-14-github-copilot-in-visual-studio-june-update/"
         },
         {
-          "id": "sd-20260716-conductor-portable-sdd-plugin",
-          "title": "Conductor 将 Spec-driven Development 封装为跨 Harness 插件",
+          "id": "sd-20260714-goose-execution-guardrails",
+          "title": "goose 将审批、执行时限与更新来源校验设为运行时护栏",
+          "evidence_status": "已证实事实",
+          "attention_momentum": "新增",
+          "timeliness": "current",
+          "summary": "goose v1.43.0 同时加入多项执行护栏：审批期间禁止 Context Compaction；Developer Shell Tool 使用默认 Extension Timeout，Code Mode 增加 Timeout 与 Cancellation；无法验证更新来源时 Fail Closed；Provider-specific requestparams 不再泄漏到 delegate() Session；MCP App Tools 不再传入 Code Mode callback，并为 ACP Serve 增加 TLS。以上为官方 Release 列出的实现事实，不代表这些边界已被独立安全评测。",
+          "record_url": "https://github.com/dicoeeee/SoftwareEngineeringInsight/blob/main/software-development/signals/2026/07/2026-07-18.md",
+          "source_title": "goose v1.43.0",
+          "source_url": "https://github.com/aaif-goose/goose/releases/tag/v1.43.0"
+        },
+        {
+          "id": "sd-20260716-qwen-multi-workspace-ownership",
+          "title": "Qwen Code 加固多工作区会话所有权与环境隔离",
           "evidence_status": "早期信号",
           "attention_momentum": "新增",
           "timeliness": "current",
-          "summary": "Google 宣布 Conductor 从 Gemini CLI Extension 迁移为 Plugin Package。该包可同时包含 Skills、Rules、MCP Servers 与 Hooks，并声称兼容 Antigravity CLI、Claude 等工具；工作流继续把 spec.md、plan.md 和任务状态保存在仓库的可版本控制 Markdown 中，同时由对话驱动生成、更新 Context、Spec、Plan 和完成状态。兼容范围可由官方发布确认，跨 Harness 的行为一致性与效果仍属于早期信号。",
-          "record_url": "https://github.com/dicoeeee/SoftwareEngineeringInsight/blob/main/software-development/signals/2026/07/2026-07-17.md",
-          "source_title": "Evolving Spec-Driven Development: Conductor Now Supports Antigravity",
-          "source_url": "https://developers.googleblog.com/evolving-spec-driven-development-conductor-now-supports-antigravity/"
-        },
-        {
-          "id": "sd-20260716-qwen-auto-approval-default",
-          "title": "Qwen Code 默认授权从逐次询问改为 Auto",
-          "evidence_status": "已证实事实",
-          "attention_momentum": "新增",
-          "timeliness": "current",
-          "summary": "Qwen Code v0.19.11 将未显式配置时的默认 Approval Mode 从 default（未在 Allowlist 的 Tool Call 逐次询问）改为 auto。官方 PR 说明 Auto 使用三层决策：Workspace Edit 自动批准、只读 Tool 按 Allowlist 批准、其余操作交给 LLM Classifier；Untrusted Folder 仍强制回到 Ask Permissions，用户也可显式切回手动模式。PR 同时明确承认 Classifier 可能把风险操作误判为安全，且交互验证仅覆盖 macOS。",
-          "record_url": "https://github.com/dicoeeee/SoftwareEngineeringInsight/blob/main/software-development/signals/2026/07/2026-07-17.md",
-          "source_title": "Qwen Code v0.19.11",
-          "source_url": "https://github.com/QwenLM/qwen-code/releases/tag/v0.19.11"
+          "summary": "Qwen Code 已合并 PR 7005，并在 v0.19.11-nightly.20260717.f8e6e8931 中发布 Multi-workspace Ownership Guards：Branch/Fork/cd 等 live-session mutation 被明确限制为 Primary Workspace，Secondary 请求以 HTTP 400 失败，且两个 Runtime 均不得执行；REST/ACP 请求继续携带所属 Workspace Environment，测试覆盖 Primary/Secondary 使用同名 Proxy Environment Variable 时互不污染。实现还把对 proces…",
+          "record_url": "https://github.com/dicoeeee/SoftwareEngineeringInsight/blob/main/software-development/signals/2026/07/2026-07-18.md",
+          "source_title": "Release v0.19.11-nightly.20260717.f8e6e8931",
+          "source_url": "https://github.com/QwenLM/qwen-code/releases/tag/v0.19.11-nightly.20260717.f8e6e8931"
         }
       ]
     },
@@ -51,39 +51,39 @@
       "topic": "software-delivery-ops",
       "label": "软件交付与运维 Agent",
       "latest_brief": {
-        "date": "2026-07-17",
+        "date": "2026-07-18",
         "status": "partial",
-        "url": "https://github.com/dicoeeee/SoftwareEngineeringInsight/blob/main/software-delivery-ops/briefs/2026/07/2026-07-17.md"
+        "url": "https://github.com/dicoeeee/SoftwareEngineeringInsight/blob/main/software-delivery-ops/briefs/2026/07/2026-07-18.md"
       },
       "signals": [
         {
-          "id": "sdo-20260528-google-sre-actuation-control-plane",
-          "title": "Google SRE 将 Agent 推理与高风险执行拆成渐进授权控制面",
-          "evidence_status": "厂商主张",
+          "id": "sdo-20260717-datadog-cloud-cost-skill",
+          "title": "Datadog Bits Chat 将成本与可观测数据并入 FinOps 调查",
+          "evidence_status": "已证实事实",
           "attention_momentum": "新增",
-          "timeliness": "historical",
-          "summary": "Google SRE 公开 AI Operator 与 Actuation Agent/Actus 的分层架构：推理 Agent 负责调查和选择缓解方案，但不能直接运行脚本；Actuation 层以确定性接口执行，并要求 dry-run、事故理由、并发动作检查和风险评分。原本可自主执行的 L3 动作在高风险或异常生产环境中可动态降为 L2 人工批准；长任务需要结果验证，Guardian/Red Button 可暂停进行中动作、阻止新动作并撤销全部 L3 权限。Agent 使用独立身份、按需最小权限、专用速率限制和 circuit breaker，不继承操作者的 ambient access。 同一材料还描述 IRM Analyze…",
-          "record_url": "https://github.com/dicoeeee/SoftwareEngineeringInsight/blob/main/software-delivery-ops/signals/2026/07/2026-07-17.md",
-          "source_title": "AI in SRE: How Google is Engineering the Future of Reliable Operations",
-          "source_url": "https://sre.google/resources/practices-and-processes/ai-engineering-reliable-operations/"
+          "timeliness": "current",
+          "summary": "Datadog 发布 Bits Chat 的 Cloud Cost skill。它可从成本异常或自然语言问题启动调查，覆盖 cloud、SaaS、AI、custom 与 Datadog 成本；识别 team、service、account、region、resource 等支出驱动项，比较实际或预测支出与预算，并把成本变化与 CPU、memory、request volume、storage size 等可观测指标关联。用户可继续追问并把调查写入 Datadog Notebook；读取成本数据需要 Bits Chat 与 Cloud Cost Management 权限，创建或更新调查记录还需要相应 Notebooks 权限。官方…",
+          "record_url": "https://github.com/dicoeeee/SoftwareEngineeringInsight/blob/main/software-delivery-ops/signals/2026/07/2026-07-18.md",
+          "source_title": "Answer any cost question faster with the Cloud Cost skill in Bits Chat",
+          "source_url": "https://www.datadoghq.com/blog/cloud-cost-skill-bits-chat/"
         },
         {
-          "id": "sdo-20260714-grafana-cross-source-assistant",
-          "title": "Grafana Assistant 将跨 30+ 数据源调查纳入统一权限边界",
+          "id": "sdo-20260718-opensre-github-chat-writes",
+          "title": "OpenSRE 在 Chat 中开放无单次审批的 GitHub 写操作",
           "evidence_status": "早期信号",
           "attention_momentum": "新增",
           "timeliness": "current",
-          "summary": "Grafana 宣布 Assistant 可通过原生 data source architecture 跨 30 多种数据源工作，覆盖 AppDynamics、Azure Monitor、Dynatrace、Honeycomb、New Relic、Splunk、Zabbix、MongoDB、Oracle、Snowflake、Jira 等；用户可在一次调查中查询、读取和关联数据，并据此创建 dashboard。官方文档说明 Assistant 的动作继续通过既有 security、auditing、RBAC 和数据源权限执行。Assistant Investigations 以 Public Preview 提供 multi-age…",
-          "record_url": "https://github.com/dicoeeee/SoftwareEngineeringInsight/blob/main/software-delivery-ops/signals/2026/07/2026-07-17.md",
-          "source_title": "Stop switching tools to find answers: Grafana Assistant now works across 30+ data sources",
-          "source_url": "https://grafana.com/blog/stop-switching-tools-to-find-answers-grafana-assistant-now-works-across-30-data-sources/"
+          "summary": "OpenSRE 0.1.2026.7.18 为 Action Agent 加入认证的 githubcli 工具，可从交互式 Chat 执行 GitHub 读取与写入，包括创建、编辑、评论和关闭 Issue/PR、合并 PR，以及调用 gh api。tag 中工具声明将 sideeffectlevel 标为 mutating，同时设置 requiresapproval=False。运行器阻止 auth、extension、workflow、run、secret、codespace、ssh-key、gpg-key、config 等顶层命令，限制 1–120 秒超时，并在 stdout/stderr 中替换配置 token；但 gh a…",
+          "record_url": "https://github.com/dicoeeee/SoftwareEngineeringInsight/blob/main/software-delivery-ops/signals/2026/07/2026-07-18.md",
+          "source_title": "OpenSRE 0.1.2026.7.18",
+          "source_url": "https://github.com/Tracer-Cloud/opensre/releases/tag/v0.1.2026.7.18"
         }
       ]
     }
   ],
   "latest_daily_pdf": {
-    "date": "2026-07-16",
-    "url": "https://github.com/dicoeeee/SoftwareEngineeringInsight/blob/main/reports/daily/2026/07/2026-07-16.pdf"
+    "date": "2026-07-17",
+    "url": "https://github.com/dicoeeee/SoftwareEngineeringInsight/blob/main/reports/daily/2026/07/2026-07-17.pdf"
   },
   "latest_weekly_report": null
 }
