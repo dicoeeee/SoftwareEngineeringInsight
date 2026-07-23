@@ -1,27 +1,49 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-07-22T22:31:06+08:00",
+  "generated_at": "2026-07-23T11:17:59+08:00",
   "repository": "https://github.com/dicoeeee/SoftwareEngineeringInsight",
   "topics": [
     {
       "topic": "software-development",
       "label": "软件开发 Agent",
       "latest_brief": {
-        "date": "2026-07-22",
+        "date": "2026-07-23",
         "status": "success",
-        "url": "https://github.com/dicoeeee/SoftwareEngineeringInsight/blob/main/software-development/briefs/2026/07/2026-07-22.md"
+        "url": "https://github.com/dicoeeee/SoftwareEngineeringInsight/blob/main/software-development/briefs/2026/07/2026-07-23.md"
       },
       "signals": [
         {
-          "id": "sd-20260721-claude-tag-eval-loop",
-          "title": "Claude Code 团队把共享频道记忆、分层放行与事故回灌连成协作 Agent 闭环",
+          "id": "sd-20260722-cursor-request-router",
+          "title": "Cursor 以请求级分类器在质量与成本之间动态路由模型",
           "evidence_status": "厂商主张",
           "attention_momentum": "新增",
           "timeliness": "current",
-          "summary": "Simon Willison 发布的公开访谈中，Claude Code 团队成员称，协作 Agent Claude Tag 会主动监控 Slack 中的问题，以每个频道一份 Markdown 维护共享记忆，由具体 Session 向频道主记忆回写，并提交工程变更；团队称其目前承担约 65% 的 Claude Code 产品工程 PR。团队还描述了渐进式放行：关键区域保留人工 Code Owner，外围代码在约六个月信任积累后才允许自动评审独立放行；导致事故的 PR 会被加入评测集，新模型须同时运行团队与产品评测。上述工作流与比例均属于团队自述，不能等同于独立验证的生产效果。",
-          "record_url": "https://github.com/dicoeeee/SoftwareEngineeringInsight/blob/main/software-development/signals/2026/07/2026-07-22.md",
-          "source_title": "A Fireside Chat with Cat and Thariq from the Claude Code team",
-          "source_url": "https://simonwillison.net/2026/Jul/21/cat-and-thariq/"
+          "summary": "Cursor 发布面向 Teams 与 Enterprise 的 Cursor Router。它在模型执行前按 Query、Context、Task Complexity 与 Domain 对每次请求分类，再在允许的模型池中选择执行模型；训练数据来自 60 万条以上真实请求，线上 A/B Test 覆盖数百万请求，并同时观察用户满意度代理指标、生成代码 Keep Rate 与因切换模型造成的 Cache Miss 成本。产品提供 Intelligence、Balance、Cost 三种优化模式，管理员可以按团队设置模式并允许或阻止具体模型。Cursor 披露的 30%–60% 成本节省、满意度与 Cost per Commit 均…",
+          "record_url": "https://github.com/dicoeeee/SoftwareEngineeringInsight/blob/main/software-development/signals/2026/07/2026-07-23.md",
+          "source_title": "Introducing Cursor Router",
+          "source_url": "https://cursor.com/blog/router"
+        },
+        {
+          "id": "sd-20260722-gemini-agent-safety-preview",
+          "title": "Gemini CLI 预览版把循环控制、A2A 隔离与默认拒绝沙箱汇入同一安全面",
+          "evidence_status": "早期信号",
+          "attention_momentum": "新增",
+          "timeliness": "current",
+          "summary": "Gemini CLI v0.53.0-preview.0 汇入用于缓解无限 ReAct Loop 与 Prompt Injection Loop 的处理，为 A2A Server 强制 Workspace Trust 与 Task Isolation 以降低远程代码执行风险，并把 macOS Permissive Seatbelt Profile 调整为 Deny-default 模型；同版还增加 Eval Coverage Report 命令。上述变化可由官方预发布记录与关联 PR 确认，但仍处于 Prerelease，不能据此证明安全效果或兼容性已经稳定。",
+          "record_url": "https://github.com/dicoeeee/SoftwareEngineeringInsight/blob/main/software-development/signals/2026/07/2026-07-23.md",
+          "source_title": "Release v0.53.0-preview.0",
+          "source_url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.53.0-preview.0"
+        },
+        {
+          "id": "sd-20260723-codex-mailbox-wakeup",
+          "title": "Codex 让待处理 Agent Mail 成为持久睡眠线程的确定性唤醒条件",
+          "evidence_status": "已证实事实",
+          "attention_momentum": "新增",
+          "timeliness": "current",
+          "summary": "OpenAI Codex 已合并 PR 34852，修复 Durable Sleep 与 Agent Mailbox 之间的唤醒缺口：此前仅排队、不触发新 Turn 的 Agent Mail 不会恢复已进入持久睡眠的空闲 Root Thread，消息虽然持久化，任务却可能一直停滞。修复把 Pending Mailbox Message 视为 Durable Sleep 的待处理工作并触发唤醒，同时保留普通空闲线程仍须显式 triggerturn 的约束；新增回归测试覆盖睡眠 Root Thread 被 Queue-only Mail 唤醒并保留消息。",
+          "record_url": "https://github.com/dicoeeee/SoftwareEngineeringInsight/blob/main/software-development/signals/2026/07/2026-07-23.md",
+          "source_title": "Wake sleeping threads for queued agent mail",
+          "source_url": "https://github.com/openai/codex/pull/34852"
         }
       ]
     },
@@ -29,28 +51,28 @@
       "topic": "software-delivery-ops",
       "label": "软件交付与运维 Agent",
       "latest_brief": {
-        "date": "2026-07-22",
+        "date": "2026-07-23",
         "status": "success",
-        "url": "https://github.com/dicoeeee/SoftwareEngineeringInsight/blob/main/software-delivery-ops/briefs/2026/07/2026-07-22.md"
+        "url": "https://github.com/dicoeeee/SoftwareEngineeringInsight/blob/main/software-delivery-ops/briefs/2026/07/2026-07-23.md"
       },
       "signals": [
         {
-          "id": "sdo-20260721-harness-agent-dlc",
-          "title": "Harness 将 AI Agent 的评测、部署与运行治理接入同一交付控制面",
-          "evidence_status": "厂商主张",
+          "id": "sdo-20260722-kagent-method-level-a2a-guard",
+          "title": "kagent 将 A2A 只读权限下沉到 JSON-RPC 方法级门禁",
+          "evidence_status": "早期信号",
           "attention_momentum": "新增",
           "timeliness": "current",
-          "summary": "Harness 发布 Agent Development Lifecycle（Agent DLC）产品组合，把 Agent 的离线评测与流水线质量门禁、Amazon Bedrock AgentCore 和 Google Agent Runtime 部署、渐进式流量切换、OPA 与审批、运行时 prompt（提示词）/model（模型）配置、资产目录、AIBOM、运行时防火墙和跨会话 AgentTrace 放入同一交付平台。官方材料还描述生产失败可回流为评测用例，prompt（提示词）与 model（模型）配置可独立版本化和回滚；这些产品行为和可用性均来自厂商材料，尚无独立生产验证。",
-          "record_url": "https://github.com/dicoeeee/SoftwareEngineeringInsight/blob/main/software-delivery-ops/signals/2026/07/2026-07-22.md",
-          "source_title": "Introducing Harness Agent DLC: Extending your SDLC to AI Agents",
-          "source_url": "https://www.harness.io/blog/introducing-harness-agent-dlc"
+          "summary": "kagent v0.10.0-beta10 将 A2A（Agent-to-Agent）只读共享从 HTTP 动词判断改为 JSON-RPC 方法级授权：ListTasks、GetTask、订阅与读取 Push 配置可通过，SendMessage、取消任务和写入 Push 配置等方法由 requireWritableShare 拒绝。关联 PR 说明此前所有 A2A 请求都通过 POST，传输层的非 GET 拦截使默认只读共享无法读取任务。该版本还修复 OpenAI Agents SDK 流式 Responses 被低层 OpenAIInstrumentor 重复插桩后崩溃的问题，只在追踪或日志启用时安装插桩，并由 Agents 专…",
+          "record_url": "https://github.com/dicoeeee/SoftwareEngineeringInsight/blob/main/software-delivery-ops/signals/2026/07/2026-07-23.md",
+          "source_title": "v0.10.0-beta10",
+          "source_url": "https://github.com/kagent-dev/kagent/releases/tag/v0.10.0-beta10"
         }
       ]
     }
   ],
   "latest_daily_pdf": {
-    "date": "2026-07-22",
-    "url": "https://github.com/dicoeeee/SoftwareEngineeringInsight/blob/main/reports/daily/2026/07/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E6%B4%9E%E5%AF%9F_2026-07-22.pdf"
+    "date": "2026-07-23",
+    "url": "https://github.com/dicoeeee/SoftwareEngineeringInsight/blob/main/reports/daily/2026/07/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E6%B4%9E%E5%AF%9F_2026-07-23.pdf"
   },
   "latest_weekly_report": {
     "date": "2026-W29",
