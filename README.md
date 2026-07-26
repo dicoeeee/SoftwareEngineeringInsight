@@ -11,14 +11,17 @@
 
 ## 内容结构
 
-- [`software-development/`](./software-development/)：Commit 之前的软件开发 Agent。
-- [`software-delivery-ops/`](./software-delivery-ops/)：从 Commit/PR 开始的软件交付与生产运维 Agent。
+- [`software-development/`](./software-development/)：Epoch 2 中 Commit 之前的软件开发 Agent 日度简报与信号。
+- [`software-delivery-ops/`](./software-delivery-ops/)：Epoch 2 中从 Commit/PR 开始的软件交付与生产运维 Agent 日度简报与信号。
 - [`reports/daily/`](./reports/daily/)：每日文章速览 PDF，提供核心观点和可点击原文链接。
 - [`reports/feeds/latest.json`](./reports/feeds/latest.json)：最新专题与有效信号的程序化索引。
 - [`reports/feeds/feed.xml`](./reports/feeds/feed.xml)：可订阅的 RSS 技术信号入口。
 - [`reports/weekly/`](./reports/weekly/)：跨专题周报。
+- [`archive/epoch-1/`](./archive/epoch-1/)：`2026-07-26` 之前的历史归档，仅供人工查阅。
 
-每个专题包含基线、日度简报和事件级信号记录。同一事件沿用稳定信号 ID；新增证据追加到原记录并保留更新历史。标记为 `excluded` 的记录仅用于保留人工更正审计，不进入后续趋势统计。
+当前活动知识从 `2026-07-26` 开始，历史引用策略为 `none`。Epoch 1 不参与当前模型上下文、去重、门禁、恢复、Feed、周报或发布判断；旧事件可能在 Epoch 2 被重新发现。
+
+活动专题包含日度简报和事件级信号记录。同一 Epoch 内，同一事件沿用稳定信号 ID；新增证据追加到原记录并保留更新历史。标记为 `excluded` 的记录仅用于保留人工更正审计，不进入后续趋势统计。
 
 ## 边界说明
 

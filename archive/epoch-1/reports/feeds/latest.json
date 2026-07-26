@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-07-25T14:04:37+08:00",
+  "repository": "https://github.com/dicoeeee/SoftwareEngineeringInsight",
+  "topics": [
+    {
+      "topic": "software-development",
+      "label": "软件开发 Agent",
+      "latest_brief": {
+        "date": "2026-07-25",
+        "status": "success",
+        "url": "https://github.com/dicoeeee/SoftwareEngineeringInsight/blob/main/software-development/briefs/2026/07/2026-07-25.md"
+      },
+      "signals": [
+        {
+          "id": "sd-20260724-claude-opus5-adaptive-tool-control",
+          "title": "Claude Opus 5 将会话内工具变更与安全回退开放为 API 控制面",
+          "evidence_status": "已证实事实",
+          "attention_momentum": "新增",
+          "timeliness": "current",
+          "summary": "Anthropic 发布 Claude Opus 5，并同时以 beta 形式开放两项平台控制：开发者可在同一对话中改变模型可用工具而不使 prompt cache 失效；当 Opus 5 或 Fable 5 的请求被安全分类器标记时，可配置服务器端 automatic fallback 路由至另一模型。GitHub 同日确认 Opus 5 已逐步进入 Copilot 的 IDE、CLI、cloud agent 与 app，并要求 Business/Enterprise 管理员显式启用对应 policy；这些是可用范围与管理动作，不构成独立性能证明。",
+          "record_url": "https://github.com/dicoeeee/SoftwareEngineeringInsight/blob/main/software-development/signals/2026/07/2026-07-25.md",
+          "source_title": "Introducing Claude Opus 5",
+          "source_url": "https://www.anthropic.com/news/claude-opus-5"
+        },
+        {
+          "id": "sd-20260723-syncpetri-constrained-concurrency-tests",
+          "title": "SyncPetri 用资源模型约束 LLM 生成并发 Rust API 测试",
+          "evidence_status": "早期信号",
+          "attention_momentum": "新增",
+          "timeliness": "current",
+          "summary": "SyncPetri 预印本把并发 Rust API 的资源、生命周期、因果依赖与冲突表示为 Colored Petri Net，再生成含事件、偏序、可接受结果类和不可改写约束的 ScenarioBlueprint（场景蓝图），由 LLM 只负责将其具体化为 Rust 测试。生成后先通过编译、marker（事件标记）覆盖与局部忠实合同，再以结构、结果、不变量和活性四层 oracle（判定器）区分“生成测试失真”与“被测 API 可能失效”；Petri 模型还据冲突对选择带 barrier/yield 的 Loom 兼容 macro harness（宏观并发测试框架），在其中探索 micro-interleaving（微观交错）。",
+          "record_url": "https://github.com/dicoeeee/SoftwareEngineeringInsight/blob/main/software-development/signals/2026/07/2026-07-25.md",
+          "source_title": "From Resource Flow to Executable Tests: Petri-Net-Guided LLM Test Generation for Concurrent Stateful Rust APIs",
+          "source_url": "https://arxiv.org/abs/2607.21530"
+        }
+      ]
+    },
+    {
+      "topic": "software-delivery-ops",
+      "label": "软件交付与运维 Agent",
+      "latest_brief": {
+        "date": "2026-07-25",
+        "status": "success",
+        "url": "https://github.com/dicoeeee/SoftwareEngineeringInsight/blob/main/software-delivery-ops/briefs/2026/07/2026-07-25.md"
+      },
+      "signals": []
+    }
+  ],
+  "latest_daily_pdf": {
+    "date": "2026-07-25",
+    "url": "https://github.com/dicoeeee/SoftwareEngineeringInsight/blob/main/reports/daily/2026/07/DEVHOT-10%E5%88%86%E9%92%9F%E4%BA%86%E8%A7%A3%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8BAI%E5%89%8D%E6%B2%BF%E5%8A%A8%E6%80%81-20260725.pdf"
+  },
+  "latest_weekly_report": {
+    "date": "2026-W29",
+    "url": "https://github.com/dicoeeee/SoftwareEngineeringInsight/blob/main/reports/weekly/2026/2026-W29.md"
+  },
+  "latest_technology_radar": null
+}
