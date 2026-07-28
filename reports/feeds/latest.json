@@ -1,27 +1,27 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-07-27T10:40:32+08:00",
+  "generated_at": "2026-07-28T12:03:00+08:00",
   "repository": "https://github.com/dicoeeee/SoftwareEngineeringInsight",
   "topics": [
     {
       "topic": "software-development",
       "label": "软件开发 Agent",
       "latest_brief": {
-        "date": "2026-07-27",
+        "date": "2026-07-28",
         "status": "success",
-        "url": "https://github.com/dicoeeee/SoftwareEngineeringInsight/blob/main/software-development/briefs/2026/07/2026-07-27.md"
+        "url": "https://github.com/dicoeeee/SoftwareEngineeringInsight/blob/main/software-development/briefs/2026/07/2026-07-28.md"
       },
       "signals": [
         {
-          "id": "sig-relay-market-token-resale-20260726",
-          "title": "低价 LLM API 中转的凭证与成本风险",
-          "evidence_status": "早期信号",
+          "id": "sd-20260724-claude-code-runtime-controls",
+          "title": "Claude Code 收紧网络准入并补齐嵌套代理观测与失败分类",
+          "evidence_status": "已证实事实",
           "attention_momentum": "待观察",
           "timeliness": "current",
-          "summary": "Simon Willison 转述的一项调查称，部分低价 LLM token 中转服务会聚合来源不透明的上游额度，再通过 OpenAI-compatible gateway 向开发者转售。该材料把凭证滥用、模型替换、请求数据处理和异常账单连接为同一类开发基础设施风险。",
-          "record_url": "https://github.com/dicoeeee/SoftwareEngineeringInsight/blob/main/software-development/signals/2026/07/2026-07-27.md",
-          "source_title": "",
-          "source_url": ""
+          "summary": "Claude Code v2.1.219 新增 sandbox.network.strictAllowlist，支持拒绝未明确允许的主机；stream-json 开始转发嵌套 subagent 事件；自托管 runner 的派发与会话失败使用结构化分类。 三项变化把网络权限、调用拓扑和失败语义连接成同一运行时控制面，使上层编排器能够依据可验证状态决定终止或恢复，而不是只依赖顶层自然语言结果。",
+          "record_url": "https://github.com/dicoeeee/SoftwareEngineeringInsight/blob/main/software-development/signals/2026/07/2026-07-28.md",
+          "source_title": "Claude Code v2.1.219",
+          "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.219"
         }
       ]
     },
@@ -29,50 +29,28 @@
       "topic": "software-delivery-ops",
       "label": "软件交付与运维 Agent",
       "latest_brief": {
-        "date": "2026-07-27",
+        "date": "2026-07-28",
         "status": "success",
-        "url": "https://github.com/dicoeeee/SoftwareEngineeringInsight/blob/main/software-delivery-ops/briefs/2026/07/2026-07-27.md"
+        "url": "https://github.com/dicoeeee/SoftwareEngineeringInsight/blob/main/software-delivery-ops/briefs/2026/07/2026-07-28.md"
       },
       "signals": [
         {
-          "id": "sdo-20260726-google-secops-multi-event-true-up",
-          "title": "多事件检测以延迟首跑和后台补算吸收迟到数据",
+          "id": "sdo-20260727-project-perception-agentic-defense",
+          "title": "Project Perception 以红蓝绿代理形成自主防御闭环",
           "evidence_status": "厂商主张",
           "attention_momentum": "待观察",
           "timeliness": "current",
-          "summary": "",
-          "record_url": "https://github.com/dicoeeee/SoftwareEngineeringInsight/blob/main/software-delivery-ops/signals/2026/07/2026-07-27.md",
-          "source_title": "",
-          "source_url": ""
-        },
-        {
-          "id": "sdo-20260726-opensre-investigation-state-continuity",
-          "title": "OpenSRE 以持续摘要和既有调查状态保持跨轮连续性",
-          "evidence_status": "已证实事实",
-          "attention_momentum": "待观察",
-          "timeliness": "current",
-          "summary": "",
-          "record_url": "https://github.com/dicoeeee/SoftwareEngineeringInsight/blob/main/software-delivery-ops/signals/2026/07/2026-07-27.md",
-          "source_title": "",
-          "source_url": ""
-        },
-        {
-          "id": "sdo-20260726-pr-agent-explicit-failure-semantics",
-          "title": "PR-Agent 部署包将工具失败从空成功改为明确失败",
-          "evidence_status": "已证实事实",
-          "attention_momentum": "待观察",
-          "timeliness": "current",
-          "summary": "",
-          "record_url": "https://github.com/dicoeeee/SoftwareEngineeringInsight/blob/main/software-delivery-ops/signals/2026/07/2026-07-27.md",
-          "source_title": "",
-          "source_url": ""
+          "summary": "Microsoft 公布 Project Perception 的 signals、context、models、harness、agents 与 actuators 分层，以及红队、蓝队和绿队代理闭环；首个软件漏洞管理场景使用 MAI-Cyber-1-Flash 和 MDASH 多模型代理团队，并计划于 2026-08-03 进入 public preview。 该设计把攻击发现、检测响应和系统修复拆分为相互验证的角色，并将实际行动集中到 actuator 边界。它为自主安全运营提供了比单一对话助手更清晰的证据、权限和恢复接口。",
+          "record_url": "https://github.com/dicoeeee/SoftwareEngineeringInsight/blob/main/software-delivery-ops/signals/2026/07/2026-07-28.md",
+          "source_title": "Rethinking security for the age of AI",
+          "source_url": "https://blogs.microsoft.com/blog/2026/07/27/rethinking-security-for-the-age-of-ai/"
         }
       ]
     }
   ],
   "latest_daily_pdf": {
-    "date": "2026-07-27",
-    "url": "https://github.com/dicoeeee/SoftwareEngineeringInsight/blob/main/reports/daily/2026/07/DEVHOT-10%E5%88%86%E9%92%9F%E4%BA%86%E8%A7%A3%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8BAI%E5%89%8D%E6%B2%BF%E5%8A%A8%E6%80%81-20260727.pdf"
+    "date": "2026-07-28",
+    "url": "https://github.com/dicoeeee/SoftwareEngineeringInsight/blob/main/reports/daily/2026/07/DEVHOT-10%E5%88%86%E9%92%9F%E4%BA%86%E8%A7%A3%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8BAI%E5%89%8D%E6%B2%BF%E5%8A%A8%E6%80%81-20260728.pdf"
   },
   "latest_weekly_report": null,
   "latest_technology_radar": null,
