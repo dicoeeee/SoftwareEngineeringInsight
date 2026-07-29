@@ -1,27 +1,38 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-07-28T12:03:00+08:00",
+  "generated_at": "2026-07-29T15:04:47+08:00",
   "repository": "https://github.com/dicoeeee/SoftwareEngineeringInsight",
   "topics": [
     {
       "topic": "software-development",
       "label": "软件开发 Agent",
       "latest_brief": {
-        "date": "2026-07-28",
+        "date": "2026-07-29",
         "status": "success",
-        "url": "https://github.com/dicoeeee/SoftwareEngineeringInsight/blob/main/software-development/briefs/2026/07/2026-07-28.md"
+        "url": "https://github.com/dicoeeee/SoftwareEngineeringInsight/blob/main/software-development/briefs/2026/07/2026-07-29.md"
       },
       "signals": [
         {
-          "id": "sd-20260724-claude-code-runtime-controls",
-          "title": "Claude Code 收紧网络准入并补齐嵌套代理观测与失败分类",
+          "id": "sd-20260723-github-mcp-stateless-core",
+          "title": "GitHub MCP Server 适配无状态核心并重构会话路径",
           "evidence_status": "已证实事实",
           "attention_momentum": "待观察",
           "timeliness": "current",
-          "summary": "Claude Code v2.1.219 新增 sandbox.network.strictAllowlist，支持拒绝未明确允许的主机；stream-json 开始转发嵌套 subagent 事件；自托管 runner 的派发与会话失败使用结构化分类。 三项变化把网络权限、调用拓扑和失败语义连接成同一运行时控制面，使上层编排器能够依据可验证状态决定终止或恢复，而不是只依赖顶层自然语言结果。",
-          "record_url": "https://github.com/dicoeeee/SoftwareEngineeringInsight/blob/main/software-development/signals/2026/07/2026-07-28.md",
-          "source_title": "Claude Code v2.1.219",
-          "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.219"
+          "summary": "下一版 MCP 规范移除 sessions 与 initialize，并允许客户端并行完成握手。GitHub MCP Server 移除了 Redis sessions、逐请求深度载荷检查，并使用 Go SDK 的兼容包装处理 URL elicitation 的新旧客户端差异。 无状态核心使远程 MCP 服务更接近可水平扩展的 HTTP 单元，但授权、审计和多轮交互状态仍需显式设计；协议升级应与边缘控制和 conformance tests 一起验证。",
+          "record_url": "https://github.com/dicoeeee/SoftwareEngineeringInsight/blob/main/software-development/signals/2026/07/2026-07-29.md",
+          "source_title": "GitHub MCP Server supports the next MCP specification",
+          "source_url": "https://github.blog/changelog/2026-07-23-github-mcp-server-supports-the-next-mcp-specification/"
+        },
+        {
+          "id": "sd-20260728-copilot-grok-4-5-governance",
+          "title": "GitHub Copilot 以企业策略和多入口矩阵交付 Grok 4.5",
+          "evidence_status": "已证实事实",
+          "attention_momentum": "待观察",
+          "timeliness": "current",
+          "summary": "GitHub 正逐步向 Copilot Pro、Pro+、Max、Business 和 Enterprise 推出 Grok 4.5，并列出八类模型选择入口。Business 与 Enterprise 管理员必须启用默认关闭的策略，调用按提供方列表价计入用量计费。 模型接入需要以策略开关、入口矩阵、渐进可见性、用量和回退方式组成的受控能力发布单元管理，而不能只依据某个客户端是否显示模型。",
+          "record_url": "https://github.com/dicoeeee/SoftwareEngineeringInsight/blob/main/software-development/signals/2026/07/2026-07-29.md",
+          "source_title": "Grok 4.5 is now available in GitHub Copilot",
+          "source_url": "https://github.blog/changelog/2026-07-28-grok-4-5-is-now-available-in-github-copilot/"
         }
       ]
     },
@@ -29,28 +40,16 @@
       "topic": "software-delivery-ops",
       "label": "软件交付与运维 Agent",
       "latest_brief": {
-        "date": "2026-07-28",
+        "date": "2026-07-29",
         "status": "success",
-        "url": "https://github.com/dicoeeee/SoftwareEngineeringInsight/blob/main/software-delivery-ops/briefs/2026/07/2026-07-28.md"
+        "url": "https://github.com/dicoeeee/SoftwareEngineeringInsight/blob/main/software-delivery-ops/briefs/2026/07/2026-07-29.md"
       },
-      "signals": [
-        {
-          "id": "sdo-20260727-project-perception-agentic-defense",
-          "title": "Project Perception 以红蓝绿代理形成自主防御闭环",
-          "evidence_status": "厂商主张",
-          "attention_momentum": "待观察",
-          "timeliness": "current",
-          "summary": "Microsoft 公布 Project Perception 的 signals、context、models、harness、agents 与 actuators 分层，以及红队、蓝队和绿队代理闭环；首个软件漏洞管理场景使用 MAI-Cyber-1-Flash 和 MDASH 多模型代理团队，并计划于 2026-08-03 进入 public preview。 该设计把攻击发现、检测响应和系统修复拆分为相互验证的角色，并将实际行动集中到 actuator 边界。它为自主安全运营提供了比单一对话助手更清晰的证据、权限和恢复接口。",
-          "record_url": "https://github.com/dicoeeee/SoftwareEngineeringInsight/blob/main/software-delivery-ops/signals/2026/07/2026-07-28.md",
-          "source_title": "Rethinking security for the age of AI",
-          "source_url": "https://blogs.microsoft.com/blog/2026/07/27/rethinking-security-for-the-age-of-ai/"
-        }
-      ]
+      "signals": []
     }
   ],
   "latest_daily_pdf": {
-    "date": "2026-07-28",
-    "url": "https://github.com/dicoeeee/SoftwareEngineeringInsight/blob/main/reports/daily/2026/07/DEVHOT-10%E5%88%86%E9%92%9F%E4%BA%86%E8%A7%A3%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8BAI%E5%89%8D%E6%B2%BF%E5%8A%A8%E6%80%81-20260728.pdf"
+    "date": "2026-07-29",
+    "url": "https://github.com/dicoeeee/SoftwareEngineeringInsight/blob/main/reports/daily/2026/07/DEVHOT-10%E5%88%86%E9%92%9F%E4%BA%86%E8%A7%A3%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8BAI%E5%89%8D%E6%B2%BF%E5%8A%A8%E6%80%81-20260729.pdf"
   },
   "latest_weekly_report": null,
   "latest_technology_radar": null,
