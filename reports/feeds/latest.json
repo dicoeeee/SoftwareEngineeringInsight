@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-07-30T10:54:52+08:00",
+  "generated_at": "2026-07-30T14:25:13+08:00",
   "repository": "https://github.com/dicoeeee/SoftwareEngineeringInsight",
   "topics": [
     {
@@ -11,7 +11,30 @@
         "status": "success",
         "url": "https://github.com/dicoeeee/SoftwareEngineeringInsight/blob/main/software-development/briefs/2026/07/2026-07-30.md"
       },
-      "signals": []
+      "signals": [
+        {
+          "id": "sig-aumovio-problem-template-delta-analysis-20260729",
+          "title": "问题模板驱动的增量语义分析",
+          "evidence_status": "厂商主张",
+          "attention_momentum": "新增",
+          "timeliness": "current",
+          "summary": "AWS 与 AUMOVIO 的官方文章称，其 Problem Finder 将历史问题报告转换为含检测模式、四阶段分析指令、置信度条件和推理示例的模板。编排 Agent 为项目—模板组合调度并行分析 Agent；分析 Agent 关联 AUTOSAR 配置、代码和需求，支持全量及面向修改内容的增量分析，专家复核再反馈至模板。该架构和流程可由原文确认；问题发现数量与验证效果属于厂商主张。",
+          "record_url": "https://github.com/dicoeeee/SoftwareEngineeringInsight/blob/main/software-development/signals/2026/07/2026-07-30.md",
+          "source_title": "AUMOVIO improves quality of automotive software at scale using multi-agent AI on Amazon Bedrock",
+          "source_url": "https://aws.amazon.com/blogs/industries/aumovio-improves-quality-of-automotive-software-at-scale-using-multi-agent-ai-on-amazon-bedrock/"
+        },
+        {
+          "id": "sig-openai-agentic-harness-efficiency-20260729",
+          "title": "Agentic harness 的上下文与缓存优化",
+          "evidence_status": "厂商主张",
+          "attention_momentum": "新增",
+          "timeliness": "current",
+          "summary": "OpenAI 的官方工程文章称，Codex 与 ChatGPT Work 使用的 Rust harness 通过按需暴露工具和集成、限制工具输出、追加模型可见历史、并以确定性顺序呈现工具来减少多轮任务的上下文与重复计算。文章还称 GPT-5.6 Sol 参与了流量分析、内核优化、投机解码实验和服务配置搜索；其中性能提升与自主操作程度均为厂商主张。",
+          "record_url": "https://github.com/dicoeeee/SoftwareEngineeringInsight/blob/main/software-development/signals/2026/07/2026-07-30.md",
+          "source_title": "How GPT-5.6 fuses frontier intelligence with frontier efficiency",
+          "source_url": "https://openai.com/index/gpt-5-6-frontier-intelligence-efficiency/"
+        }
+      ]
     },
     {
       "topic": "software-delivery-ops",
@@ -21,7 +44,41 @@
         "status": "success",
         "url": "https://github.com/dicoeeee/SoftwareEngineeringInsight/blob/main/software-delivery-ops/briefs/2026/07/2026-07-30.md"
       },
-      "signals": []
+      "signals": [
+        {
+          "id": "sdo-20260730-mcp-stateless-http-governance",
+          "title": "MCP 无状态化与 HTTP 治理",
+          "evidence_status": "厂商主张",
+          "attention_momentum": "新增",
+          "timeliness": "current",
+          "summary": "MCP 2026-07-28 将初始化和协议会话从调用前提中移除，每个请求携带版本与客户端能力，并增加 HTTP 调用意图、缓存与 Trace Context 语义。AWS 表示 AgentCore Gateway 可以并行声明协议版本并由客户端逐请求选择，这是厂商产品主张。",
+          "record_url": "https://github.com/dicoeeee/SoftwareEngineeringInsight/blob/main/software-delivery-ops/signals/2026/07/2026-07-30.md",
+          "source_title": "How AgentCore Gateway supports the MCP 2026-07-28 spec",
+          "source_url": "https://aws.amazon.com/blogs/machine-learning/how-agentcore-gateway-supports-the-mcp-2026-07-28-spec/"
+        },
+        {
+          "id": "sdo-20260730-copilot-code-review-skills-mcp-ga",
+          "title": "可审计的代码评审 Agent 上下文",
+          "evidence_status": "厂商主张",
+          "attention_momentum": "新增",
+          "timeliness": "current",
+          "summary": "GitHub 宣布 Copilot code review 的 Agent Skills 和 MCP server connections 正式可用；Skills 位于仓库 .github/skills，评审 MCP 工具调用被限制为只读，评论可标示所用 Skills 或 MCP 上下文。这些能力和限制来自 GitHub 官方产品公告。",
+          "record_url": "https://github.com/dicoeeee/SoftwareEngineeringInsight/blob/main/software-delivery-ops/signals/2026/07/2026-07-30.md",
+          "source_title": "Copilot code review: Agent skills and MCP now generally available",
+          "source_url": "https://github.blog/changelog/2026-07-29-copilot-code-review-agent-skills-and-mcp-now-generally-available/"
+        },
+        {
+          "id": "sdo-20260730-gemini-enterprise-agent-control-plane",
+          "title": "Agent 生产控制面整合",
+          "evidence_status": "厂商主张",
+          "attention_momentum": "新增",
+          "timeliness": "current",
+          "summary": "Google Cloud 表示 Gemini Enterprise Agent Platform 提供最长七天的 Agent Runtime、Memory Bank、原生 Agent Identity、Gateway、Registry、线上 Evaluation 和 Observability。该能力组合及客户引述均来自厂商发布材料，尚非独立效果证明。",
+          "record_url": "https://github.com/dicoeeee/SoftwareEngineeringInsight/blob/main/software-delivery-ops/signals/2026/07/2026-07-30.md",
+          "source_title": "What’s new in Gemini Enterprise Agent Platform",
+          "source_url": "https://cloud.google.com/blog/products/ai-machine-learning/whats-new-in-gemini-enterprise-agent-platform"
+        }
+      ]
     }
   ],
   "latest_daily_pdf": {
