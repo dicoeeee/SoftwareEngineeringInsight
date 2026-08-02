@@ -1,77 +1,55 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-08-02T15:20:00+08:00",
+  "generated_at": "2026-08-02T15:57:05+08:00",
   "repository": "https://github.com/dicoeeee/SoftwareEngineeringInsight",
   "topics": [
     {
       "topic": "software-development",
       "label": "软件开发 Agent",
       "latest_brief": {
-        "date": "2026-07-31",
+        "date": "2026-08-01",
         "status": "success",
-        "url": "https://github.com/dicoeeee/SoftwareEngineeringInsight/blob/main/software-development/briefs/2026/07/2026-07-31.md"
+        "url": "https://github.com/dicoeeee/SoftwareEngineeringInsight/blob/main/software-development/briefs/2026/08/2026-08-01.md"
       },
-      "signals": [
-        {
-          "id": "sd-20260731-github-models-retirement",
-          "title": "GitHub Models 服务入口退役",
-          "evidence_status": "早期信号",
-          "attention_momentum": "待观察",
-          "timeliness": "current",
-          "summary": "",
-          "record_url": "https://github.com/dicoeeee/SoftwareEngineeringInsight/blob/main/software-development/signals/2026/07/2026-07-31.md",
-          "source_title": "",
-          "source_url": ""
-        },
-        {
-          "id": "sd-20260731-actions-self-repository-syntax",
-          "title": "Actions 同仓库 `$/` 引用语法",
-          "evidence_status": "早期信号",
-          "attention_momentum": "待观察",
-          "timeliness": "current",
-          "summary": "",
-          "record_url": "https://github.com/dicoeeee/SoftwareEngineeringInsight/blob/main/software-development/signals/2026/07/2026-07-31.md",
-          "source_title": "",
-          "source_url": ""
-        },
-        {
-          "id": "sd-20260731-stacked-pr-preview",
-          "title": "堆叠 PR 进入 public preview",
-          "evidence_status": "早期信号",
-          "attention_momentum": "待观察",
-          "timeliness": "current",
-          "summary": "",
-          "record_url": "https://github.com/dicoeeee/SoftwareEngineeringInsight/blob/main/software-development/signals/2026/07/2026-07-31.md",
-          "source_title": "",
-          "source_url": ""
-        },
-        {
-          "id": "sd-20260731-copilot-remote-control-managed-devices",
-          "title": "远程 Copilot 会话的设备限制入口",
-          "evidence_status": "早期信号",
-          "attention_momentum": "待观察",
-          "timeliness": "current",
-          "summary": "",
-          "record_url": "https://github.com/dicoeeee/SoftwareEngineeringInsight/blob/main/software-development/signals/2026/07/2026-07-31.md",
-          "source_title": "",
-          "source_url": ""
-        }
-      ]
+      "signals": []
     },
     {
       "topic": "software-delivery-ops",
       "label": "软件交付与运维 Agent",
       "latest_brief": {
-        "date": "2026-07-31",
+        "date": "2026-08-01",
         "status": "success",
-        "url": "https://github.com/dicoeeee/SoftwareEngineeringInsight/blob/main/software-delivery-ops/briefs/2026/07/2026-07-31.md"
+        "url": "https://github.com/dicoeeee/SoftwareEngineeringInsight/blob/main/software-delivery-ops/briefs/2026/08/2026-08-01.md"
       },
-      "signals": []
+      "signals": [
+        {
+          "id": "sdo-20260801-post-compromise-agent-response",
+          "title": "后入侵响应 Agent 的检测与修复闭环",
+          "evidence_status": "早期信号",
+          "attention_momentum": "待观察",
+          "timeliness": "current",
+          "summary": "",
+          "record_url": "https://github.com/dicoeeee/SoftwareEngineeringInsight/blob/main/software-delivery-ops/signals/2026/08/2026-08-01.md",
+          "source_title": "",
+          "source_url": ""
+        },
+        {
+          "id": "sdo-20260801-agent-evaluation-containment",
+          "title": "Cyber-capable Agent 评估环境的隔离边界",
+          "evidence_status": "早期信号",
+          "attention_momentum": "待观察",
+          "timeliness": "current",
+          "summary": "",
+          "record_url": "https://github.com/dicoeeee/SoftwareEngineeringInsight/blob/main/software-delivery-ops/signals/2026/08/2026-08-01.md",
+          "source_title": "",
+          "source_url": ""
+        }
+      ]
     }
   ],
   "latest_daily_pdf": {
-    "date": "2026-07-31",
-    "url": "https://github.com/dicoeeee/SoftwareEngineeringInsight/blob/main/reports/daily/2026/07/DEVHOT-10%E5%88%86%E9%92%9F%E4%BA%86%E8%A7%A3%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8BAI%E5%89%8D%E6%B2%BF%E5%8A%A8%E6%80%81-20260731.pdf"
+    "date": "2026-08-01",
+    "url": "https://github.com/dicoeeee/SoftwareEngineeringInsight/blob/main/reports/daily/2026/08/DEVHOT-10%E5%88%86%E9%92%9F%E4%BA%86%E8%A7%A3%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8BAI%E5%89%8D%E6%B2%BF%E5%8A%A8%E6%80%81-20260801.pdf"
   },
   "latest_weekly_report": null,
   "latest_technology_radar": null,
